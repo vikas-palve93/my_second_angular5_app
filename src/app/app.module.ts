@@ -6,22 +6,32 @@ import { RouterModule,  Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
-import { UserService } from './user.service';   // our custom service, see below
+import { UserService } from './user.service';
+import { TableComponent } from './table/table.component';
+import { ChartComponent } from './chart/chart.component';   // our custom service, see below
+import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
+import { ChartModule } from 'angular-highcharts';
 
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'table', component: TableComponent},
+  { path: 'chart', component: ChartComponent},
   { path: '**', component: LoginComponent }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TableComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
+    ChartModule,
+    Ng2SmartTableModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,

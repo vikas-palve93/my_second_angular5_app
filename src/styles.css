@@ -11,3 +11,9 @@
 .btn:hover {
     background-color: RoyalBlue;
 }
+.active{
+    background-color: white;
+    color: darkslategray;
+    font-family: fantasy;
+    font-variant: petite-caps;
+}
