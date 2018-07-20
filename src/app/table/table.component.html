@@ -1,12 +1,5 @@
-<div class="nav-scroller bg-white box-shadow" style="background-color : #eceaea!important">
-  <nav class="nav nav-underline">
-    <a class="nav-link" href="dashboard">Dashboard</a>
-    <a class="nav-link" [ngClass]="{'active': selectedItem == table}" href="table" >Table</a>
-    <a class="nav-link" href="chart" >Chart</a>
-    <a class="nav-link" href="login" >Log Out</a>
-   
-    
-  </nav>
-</div>
+<app-header> </app-header>
+<div class="container">
 <ng2-smart-table [settings]="settings" [source]="userData"></ng2-smart-table>
 <footer class="pt-4 my-md-5 pt-md-5 border-top">2018 &copy; Angular 5 </footer>
+</div>

@@ -1,17 +1,8 @@
+
 <body>
-
-  <div class="nav-scroller bg-white box-shadow" style="background-color : #eceaea!important">
-    <nav class="nav nav-underline">
-      <a class="nav-link " [ngClass]="{'active': selectedItem == dashboard}" href="dashboard">Dashboard</a>
-      <a class="nav-link" href="table" >Table</a>
-      <a class="nav-link" href="chart" >Chart</a>
-      <a class="nav-link" href="login" >Log Out</a>
-     
-      
-    </nav>
-  </div>
-
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <app-header> </app-header>
+  
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">User Details</h1>
       <p class="lead">User details along with their name, email, city & zipcode</p>
     </div>
@@ -34,8 +25,10 @@
               <li>{{user.address.zipcode}}</li>
              
             </ul>
-            <button class="btn" style="margin-right: 4%;"><i class="fa fa-edit"></i></button>
-            <button class="btn" style="margin-right: 4%;"><i class="fa fa-trash"></i></button>
+            <!-- <button class="btn" style="margin-right: 4%;"><i class="fa fa-edit"></i></button>
+            <button class="btn" style="margin-right: 4%;"><i class="fa fa-trash"></i></button> -->
+            <app-edit-user-popup></app-edit-user-popup>
+            <app-delete-confirm-popup></app-delete-confirm-popup>
           </div>
         </div>
       </div>

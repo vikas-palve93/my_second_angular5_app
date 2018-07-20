@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
-
+import { LoadingBarModule } from '@ngx-loading-bar/core';
+import { LoadingBarService } from '@ngx-loading-bar/core';
+import { obj } from '../object.component';
+import {LocalStorageService, SessionStorageService} from 'ngx-webstorage';
 
 @Component({
   selector: 'app-chart',
@@ -9,10 +12,15 @@ import { Chart } from 'angular-highcharts';
 })
 export class ChartComponent implements OnInit {
   chart: Chart;
-
-  constructor() { }
+  isActiveKey = 'charts';
+  constructor(private loadingBar: LoadingBarService, private localStorage:LocalStorageService) { }
 
   ngOnInit() {
+    this.localStorage.clear('isActiveKey');
+    this.localStorage.store('isActiveKey', this.isActiveKey);
+    // console.log(this.localStorage.retrieve('boundValue'));
+    
+    this.loadingBar.start();
     this.init();
   }
   addPoint() {
@@ -70,7 +78,7 @@ export class ChartComponent implements OnInit {
     setTimeout(() => {
       chart.addPoint(6);
     }, 2000);
-
+    this.loadingBar.complete();
     chart.ref$.subscribe(console.log);
   }
 

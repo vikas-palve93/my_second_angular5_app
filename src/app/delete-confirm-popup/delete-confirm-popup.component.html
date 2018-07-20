@@ -1,0 +1,17 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header"  >
+    <h4 class="modal-title">Delete</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Do you want to delete this user?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="deleteUser()">YES</button>
+    <button type="button" class="btn btn-light" (click)="c('Close click')">NO</button>
+  </div>
+</ng-template>
+<!-- <button class="btn mb-2 mr-2" (click)="openLg(content)">Delete</button> -->
+<button class="btn" (click)="openLg(content)" style="margin-right: 4%;"><i class="fa fa-trash"></i></button>

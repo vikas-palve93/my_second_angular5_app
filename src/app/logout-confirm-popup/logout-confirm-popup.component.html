@@ -1,0 +1,17 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header"  >
+    <h4 class="modal-title">Log out</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Do you want to log out?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="goToLogin()">YES</button>
+    <button type="button" class="btn btn-light" (click)="c('Close click')">NO</button>
+  </div>
+</ng-template>
+<button class="btn mb-2 mr-2" (click)="openLg(content)" style="    margin-left: 1700%;
+margin-top: 8%;">Logout</button>

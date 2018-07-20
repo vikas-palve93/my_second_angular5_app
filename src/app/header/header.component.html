@@ -1,0 +1,13 @@
+
+<div class="nav-scroller bg-white box-shadow" style="background-color : #eceaea!important">
+  <nav class="nav nav-underline">
+    <a class="nav-link" [ngClass]="{'active': isActive == 'dashboard'}" href="dashboard">Dashboard</a>
+    <a class="nav-link" [ngClass]="{'active': isActive == 'table'}" href="table" >Table</a>
+    <a class="nav-link" [ngClass]="{'active': isActive == 'charts'}" href="chart" >Chart</a>
+    <a class="nav-link" [ngClass]="{'active': isActive == 'calendar'}" href="datepicker-multiple" >Calendar</a>
+    <a class="nav-link" [ngClass]="{'active': isActive == 'eventCalendar'}" href="calendar" >Event Calendar</a>
+    <a class="nav-link" [ngClass]="{'active': isActive == 'fullCalendar'}" href="full-year-calendar" >Full Year Calendar</a>
+    <app-logout-confirm-popup></app-logout-confirm-popup>
+   
+  </nav>
+</div>  

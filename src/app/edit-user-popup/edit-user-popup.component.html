@@ -1,0 +1,38 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header"  >
+    <h4 class="modal-title">Edit</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="container">
+      <form class="form-horizontal" >
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="name">name:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="name"  name="name" [(ngModel)]="name">
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Username:</label>
+                <div class="col-sm-10">          
+                  <input type="text" class="form-control" id="username"  name="username">
+                </div>
+              </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email:</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email"  name="email">
+          </div>
+        </div>
+        
+        
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="saveUser()">SAVE</button>
+    <button type="button" class="btn btn-light" (click)="c('Close click')">CANCEL</button>
+  </div>
+</ng-template>
+<!-- <button class="btn mb-2 mr-2" (click)="openLg(content)">Delete</button> -->
+<button class="btn" (click)="openLg(content)" style="margin-right: 4%;"><i class="fa fa-edit"></i></button>

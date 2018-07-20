@@ -1,15 +1,5 @@
-<div class="nav-scroller bg-white box-shadow" style="background-color : #eceaea!important">
-  <nav class="nav nav-underline">
-    <a class="nav-link" href="dashboard">Dashboard</a>
-    <a class="nav-link" href="table" >Table</a>
-    <a class="nav-link" [ngClass]="{'active': selectedItem == chart}" href="chart" >Chart</a>
-    <a class="nav-link" href="login" >Log Out</a>
-   
-    
-  </nav>
-  
-
-</div>
+<app-header> </app-header>
+<div class="container">
 <button (click)="init()">Init</button>
 <button (click)="addSerie()">Add Serie</button>
 <button (click)="removeSerie()">Remove Serie</button>
@@ -17,3 +7,4 @@
 <button (click)="removePoint()">Remove Point</button>
 <div [chart]="chart"></div>
 <footer class="pt-4 my-md-5 pt-md-5 border-top">2018 &copy; Angular 5 </footer>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { obj } from '../object.component';
+import {LocalStorageService, SessionStorageService} from 'ngx-webstorage';
 
 @Component({
   selector: 'app-table',
@@ -8,12 +10,14 @@ import { UserService } from '../user.service';
 })
 export class TableComponent implements OnInit {
 
-  constructor( private userService:UserService,) { }
+  constructor( private userService:UserService, private localStorage:LocalStorageService) { }
   userData;
+  isActiveKey = 'table';
   ngOnInit() {
+    this.localStorage.clear('isActiveKey');
+    this.localStorage.store('isActiveKey', this.isActiveKey);
     this.userService.getUser().subscribe(
       data=>{
-         
            this.userData = data;
           console.log(this.userData);
     },
